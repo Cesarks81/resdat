@@ -10,15 +10,22 @@
   <header class="header">
     <div class="container header-inner">
       <div class="logo">
-        <!-- Si tienes el logo en PNG, ponlo aquí -->
         <!-- <img src="logo-resdat.png" alt="RESDAT Logo"> -->
         <span class="logo-text">RESDAT</span>
         <span class="logo-subtitle">Recuperación de Datos</span>
       </div>
+
+      <!-- Botón menú móvil -->
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+
       <nav class="nav">
         <a href="#servicios">Servicios</a>
         <a href="#proceso">Cómo trabajamos</a>
-        <a href="#precios">Precios orientativos</a>
+        <a href="#precios">Precios</a>
         <a href="#contacto" class="btn btn-small">Contacto</a>
       </nav>
     </div>
@@ -308,8 +315,27 @@
   </footer>
 
   <script>
-    // Año automático en el pie de página
+    // Año automático
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú móvil
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Cerrar menú al hacer click en un enlace (en móvil)
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (nav.classList.contains('nav-open')) {
+          nav.classList.remove('nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
   </script>
 </body>
 </html>
