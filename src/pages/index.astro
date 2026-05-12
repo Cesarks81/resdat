@@ -1,0 +1,751 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const CONTACT_FORM_ACTION = 'https://formspree.io/f/meennrab';
+
+const nav = [
+	{ href: '#servicios', label: 'Servicios' },
+	{ href: '#proceso', label: 'Proceso' },
+	{ href: '#casos', label: 'Casos' },
+	{ href: '#faq', label: 'FAQ' },
+];
+---
+
+<Layout>
+	<a href="#contacto" class="skip-link">Ir al formulario de contacto</a>
+
+	<header
+		class="sticky top-0 z-40 border-b border-mist/80 bg-surface/85 backdrop-blur-md"
+	>
+		<div
+			class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
+		>
+			<a href="#" class="group flex items-center gap-3 outline-none">
+				<span class="flex min-w-0 flex-col leading-tight">
+					<span class="font-display text-lg font-extrabold tracking-wide text-ink">RESDAT</span>
+					<span class="mt-0.5 max-w-[14rem] text-[9px] font-semibold uppercase leading-snug tracking-wider text-muted sm:max-w-none sm:text-[10px] sm:tracking-[0.18em]">
+						Soluciones digitales que impulsan tu empresa
+					</span>
+				</span>
+			</a>
+			<nav class="hidden items-center gap-8 text-sm font-medium text-muted md:flex">
+				{
+					nav.map((item) => (
+						<a
+							href={item.href}
+							class="relative text-ink/80 transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all hover:text-ink hover:after:w-full"
+						>
+							{item.label}
+						</a>
+					))
+				}
+			</nav>
+			<a
+				href="#contacto"
+				class="rounded-sm bg-accent px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-accent-hover"
+			>
+				Solicitar diagnóstico
+			</a>
+		</div>
+	</header>
+
+	<main>
+		<!-- Hero -->
+		<section
+			class="relative overflow-hidden bg-ink text-paper"
+			aria-labelledby="hero-heading"
+		>
+			<div
+				class="pointer-events-none absolute inset-0 opacity-[0.35]"
+				aria-hidden="true"
+				style="background-image: linear-gradient(to right, rgba(255,252,247,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,252,247,0.06) 1px, transparent 1px); background-size: 48px 48px;"
+			/>
+			<div
+				class="pointer-events-none absolute -right-24 top-1/2 h-[min(90vw,520px)] w-[min(90vw,520px)] -translate-y-1/2 rounded-full border border-accent/20 bg-gradient-to-br from-accent/25 via-sage/20 to-transparent blur-2xl"
+				aria-hidden="true"
+			/>
+			<div
+				class="relative mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-12 lg:gap-8 lg:px-8 lg:py-24"
+			>
+				<div class="lg:col-span-7">
+					<p
+						class="inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-widest text-paper/55"
+					>
+						<span class="h-px w-8 bg-accent" aria-hidden="true" />
+						B2B · España
+					</p>
+					<h1
+						id="hero-heading"
+						class="mt-6 font-display text-3xl font-semibold leading-[1.08] tracking-tight sm:text-4xl lg:text-[2.75rem]"
+					>
+						Sistemas y procesos digitales que{' '}
+						<span class="text-accent-soft">ordenan la operación</span> y acompañan el crecimiento.
+					</h1>
+					<p class="mt-6 max-w-xl text-base leading-relaxed text-paper/75 sm:text-lg">
+						Integraciones, aplicaciones web, automatización y datos con un criterio claro:
+						menos fricción interna, mejor información para decidir y entregas que puedes
+						mantener en el tiempo.
+					</p>
+					<div class="mt-10 flex flex-wrap items-center gap-4">
+						<a
+							href="#contacto"
+							class="inline-flex rounded-sm bg-accent px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-colors hover:bg-accent-hover"
+						>
+							Agendar llamada (20 min)
+						</a>
+						<a
+							href="#servicios"
+							class="inline-flex rounded-sm border border-paper/25 bg-paper/5 px-5 py-3 text-sm font-semibold text-paper backdrop-blur-sm transition-colors hover:border-paper/40 hover:bg-paper/10"
+						>
+							Ver servicios
+						</a>
+					</div>
+					<p class="mt-8 text-sm text-paper/50">
+						Base en León · Proyectos remotos en toda España · Respuesta habitual 24–48 h hábiles
+					</p>
+				</div>
+				<div class="relative flex items-center lg:col-span-5">
+					<div
+						class="relative w-full space-y-4 rounded-sm border border-paper/10 bg-paper/[0.04] p-6 backdrop-blur-sm sm:p-8"
+					>
+						<p class="font-mono text-[11px] font-medium uppercase tracking-widest text-paper/45">
+							Enfoque
+						</p>
+						<ul class="space-y-4 text-sm leading-relaxed text-paper/80">
+							<li class="flex gap-3">
+								<span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+								Diagnóstico antes de presupuesto: viabilidad y riesgos alineados con negocio.
+							</li>
+							<li class="flex gap-3">
+								<span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+								Propiedad del entregable y documentación para no depender de caja negra.
+							</li>
+							<li class="flex gap-3">
+								<span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+								Soporte y evolución cuando el proyecto no termina en el alza del servidor.
+							</li>
+						</ul>
+						<p class="border-t border-paper/10 pt-4 text-xs text-paper/45">
+							Mismo dominio de siempre —
+							<a
+								href="https://www.resdat.es/"
+								class="font-medium text-accent-soft underline decoration-paper/30 underline-offset-2 hover:decoration-accent-soft"
+							>
+								resdat.es
+							</a>
+							— con un nuevo enfoque en soluciones digitales B2B.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Confianza -->
+		<section class="bg-paper py-14" aria-labelledby="trust-heading">
+			<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+				<div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+					<h2
+						id="trust-heading"
+						class="max-w-md font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl"
+					>
+						Trabajo con equipos que necesitan orden, no solo una demo bonita.
+					</h2>
+					<p class="max-w-sm text-sm leading-relaxed text-muted">
+						Sectores de referencia — sustituye por logos cuando puedas publicarlos.
+					</p>
+				</div>
+				<ul
+					class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
+				>
+					{
+						['Industrial', 'Servicios profesionales', 'Retail y logística', 'Administración'].map(
+							(label) => (
+								<li class="flex items-center gap-3 border-l-2 border-accent bg-surface px-4 py-3 text-sm font-medium text-ink shadow-sm">
+									<span class="font-mono text-xs text-muted" aria-hidden="true">
+										—
+									</span>
+									{label}
+								</li>
+							),
+						)
+					}
+				</ul>
+			</div>
+		</section>
+
+		<!-- Líneas de actuación (identidad marca) -->
+		<section class="border-b border-mist bg-surface py-10" aria-label="Líneas de actuación">
+			<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+				<ul class="grid gap-8 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-mist">
+					<li class="flex flex-col items-center px-4 text-center sm:px-8">
+						<span class="flex h-12 w-12 items-center justify-center text-accent" aria-hidden="true">
+							<svg class="h-10 w-10" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8 38V28l8-8 8 8v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M20 18l6-6 14 14v12H8V28l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M14 38V30l4-4 4 4v8" stroke="#1E5AA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</span>
+						<h3 class="mt-3 font-display text-sm font-bold uppercase tracking-wide text-ink">
+							Eficiencia empresarial
+						</h3>
+						<p class="mt-1 text-xs leading-relaxed text-muted">
+							Procesos, automatización e integraciones.
+						</p>
+					</li>
+					<li class="flex flex-col items-center px-4 text-center sm:px-8">
+						<span class="flex h-12 w-12 items-center justify-center text-accent" aria-hidden="true">
+							<svg class="h-10 w-10" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<ellipse cx="24" cy="14" rx="10" ry="4" stroke="currentColor" stroke-width="2" />
+								<path d="M14 14v8c0 2.2 4.5 4 10 4s10-1.8 10-4v-8" stroke="currentColor" stroke-width="2" />
+								<path d="M14 22v8c0 2.2 4.5 4 10 4s10-1.8 10-4v-8" stroke="#1E5AA8" stroke-width="2" />
+							</svg>
+						</span>
+						<h3 class="mt-3 font-display text-sm font-bold uppercase tracking-wide text-ink">
+							Recuperación de datos
+						</h3>
+						<p class="mt-1 text-xs leading-relaxed text-muted">
+							Servicio especializado; datos seguros en proyectos digitales.
+						</p>
+					</li>
+					<li class="flex flex-col items-center px-4 text-center sm:px-8">
+						<span class="flex h-12 w-12 items-center justify-center text-accent" aria-hidden="true">
+							<svg class="h-10 w-10" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="2" />
+								<path d="M24 10v4M24 34v4M38 24h-4M14 24h-4" stroke="#1E5AA8" stroke-width="2" stroke-linecap="round" />
+								<path d="M10 24c6-8 22-8 28 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+								<path d="M10 24c6 8 22 8 28 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+							</svg>
+						</span>
+						<h3 class="mt-3 font-display text-sm font-bold uppercase tracking-wide text-ink">
+							Páginas web
+						</h3>
+						<p class="mt-1 text-xs leading-relaxed text-muted">
+							Sitios corporativos y producto digital a medida.
+						</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Problema → resultado -->
+		<section
+			class="border-y border-mist bg-surface py-16 sm:py-20"
+			aria-labelledby="outcomes-heading"
+		>
+			<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+				<p class="font-mono text-xs font-medium uppercase tracking-widest text-muted">
+					01 · Retos
+				</p>
+				<h2
+					id="outcomes-heading"
+					class="mt-3 max-w-2xl font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl"
+				>
+					De caos operativo a un sistema que trabaja para ti
+				</h2>
+				<div class="mt-12 grid gap-6 lg:grid-cols-12 lg:gap-8">
+					<div
+						class="flex flex-col justify-between border border-mist bg-paper/40 p-8 lg:col-span-5"
+					>
+						<h3 class="font-display text-lg font-semibold text-ink">Menos pegamento, más diseño</h3>
+						<p class="mt-4 text-sm leading-relaxed text-muted">
+							Cada punto de fricción es un lugar donde se pierde tiempo o se decide a ciegas. El
+							objetivo no es “más software”, sino{' '}
+							<strong class="font-medium text-ink">menos excepciones manuales</strong> y criterio
+							compartido.
+						</p>
+					</div>
+					<ul class="grid gap-4 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-2">
+						<li
+							class="border border-mist border-l-4 border-l-accent bg-surface p-6 transition-shadow hover:shadow-md"
+						>
+							<h3 class="font-display text-base font-semibold text-ink">Procesos repetitivos</h3>
+							<p class="mt-3 text-sm leading-relaxed text-muted">
+								Automatización y flujos conectados para reducir retrabajo y errores.
+							</p>
+						</li>
+						<li
+							class="border border-mist border-l-4 border-l-sage bg-surface p-6 transition-shadow hover:shadow-md sm:mt-6 lg:mt-0"
+						>
+							<h3 class="font-display text-base font-semibold text-ink">Herramientas sueltas</h3>
+							<p class="mt-3 text-sm leading-relaxed text-muted">
+								Integraciones y una capa de datos coherente: una fuente de verdad.
+							</p>
+						</li>
+						<li
+							class="border border-mist border-l-4 border-l-ink bg-surface p-6 transition-shadow hover:shadow-md sm:-mt-6 lg:mt-0"
+						>
+							<h3 class="font-display text-base font-semibold text-ink">Poca visibilidad</h3>
+							<p class="mt-3 text-sm leading-relaxed text-muted">
+								Reportes y accesos seguros a lo que importa a dirección y equipos.
+							</p>
+						</li>
+						<li
+							class="border border-mist bg-paper/50 p-6 text-sm italic leading-relaxed text-muted"
+						>
+							“Si tu equipo vive en Excel crítico y correos encadenados, hay margen para
+							mejorar sin un big bang.”
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Servicios -->
+		<section id="servicios" class="scroll-mt-24 bg-paper py-16 sm:py-20">
+			<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+				<p class="font-mono text-xs font-medium uppercase tracking-widest text-muted">
+					02 · Servicios
+				</p>
+				<h2 class="mt-3 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+					Lo que hacemos
+				</h2>
+				<p class="mt-3 max-w-2xl text-muted">
+					Propuestas por fases. Tú marcas prioridad y presupuesto; el alcance se cierra por
+					escrito antes de construir.
+				</p>
+				<ul class="mt-12 grid gap-5 sm:grid-cols-2">
+					{
+						[
+							{
+								title: 'Consultoría y diagnóstico',
+								body: 'Sesiones con partes clave, mapa de procesos, riesgos y quick wins. Entregable: roadmap priorizado.',
+							},
+							{
+								title: 'Desarrollo a medida',
+								body: 'Webs, intranets, herramientas internas e integraciones vía API. Código y documentación claros.',
+							},
+							{
+								title: 'Automatización y datos',
+								body: 'Flujos entre sistemas, ETL ligero, cuadros de mando y alertas. Fiabilidad por encima del parche.',
+							},
+							{
+								title: 'Mantenimiento y evolución',
+								body: 'Soporte, actualizaciones de seguridad y bolsa de horas para mejoras continuas.',
+							},
+						].map((item, i) => (
+							<li
+								class:list={[
+									'group relative overflow-hidden border border-mist bg-surface p-7 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-lg',
+									i % 2 === 1 && 'sm:translate-y-6 lg:translate-y-8',
+								]}
+							>
+								<span
+									class="pointer-events-none absolute -right-4 -top-4 font-display text-7xl font-bold tabular-nums text-paper/80 transition-colors group-hover:text-accent/15"
+									aria-hidden="true"
+								>
+									{String(i + 1).padStart(2, '0')}
+								</span>
+								<h3 class="relative font-display text-lg font-semibold text-ink">{item.title}</h3>
+								<p class="relative mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
+							</li>
+						))
+					}
+				</ul>
+				<div class="mt-12">
+					<a
+						href="#contacto"
+						class="inline-flex rounded-sm border-2 border-ink bg-ink px-5 py-3 text-sm font-semibold text-surface transition-colors hover:border-accent hover:bg-accent"
+					>
+						Cuéntanos tu caso
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Proceso -->
+		<section id="proceso" class="scroll-mt-24 border-y border-mist bg-ink py-16 text-paper sm:py-20">
+			<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+				<p class="font-mono text-xs font-medium uppercase tracking-widest text-paper/45">
+					03 · Proceso
+				</p>
+				<h2 class="mt-3 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+					Cómo trabajamos
+				</h2>
+				<p class="mt-3 max-w-2xl text-paper/65">
+					Hitos revisables, comunicación directa y sin sorpresas en el alcance.
+				</p>
+				<ol class="relative mt-14 grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+					<div
+						class="pointer-events-none absolute left-0 right-0 top-8 hidden h-px bg-gradient-to-r from-transparent via-paper/25 to-transparent lg:block"
+						aria-hidden="true"
+					/>
+					{
+						[
+							{
+								step: '01',
+								title: 'Diagnóstico',
+								body: 'Objetivos, actores y restricciones reales. Viabilidad sin humo.',
+							},
+							{
+								step: '02',
+								title: 'Propuesta',
+								body: 'Alcance por fases, estimación, riesgos y criterios de éxito.',
+							},
+							{
+								step: '03',
+								title: 'Implementación',
+								body: 'Iteración con demos; validación continua con quien usa el sistema.',
+							},
+							{
+								step: '04',
+								title: 'Puesta en marcha',
+								body: 'Formación breve, go-live y plan de mejora acordado.',
+							},
+						].map((item) => (
+							<li class="relative border-t border-paper/15 pt-8 lg:border-t-0 lg:pt-12">
+								<span class="font-mono text-xs font-bold tabular-nums text-accent">{item.step}</span>
+								<h3 class="mt-3 font-display text-base font-semibold">{item.title}</h3>
+								<p class="mt-2 text-sm leading-relaxed text-paper/65">{item.body}</p>
+							</li>
+						))
+					}
+				</ol>
+			</div>
+		</section>
+
+		<!-- Casos -->
+		<section id="casos" class="scroll-mt-24 bg-surface py-16 sm:py-20">
+			<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+				<p class="font-mono text-xs font-medium uppercase tracking-widest text-muted">
+					04 · Casos
+				</p>
+				<h2 class="mt-3 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+					Ejemplos de proyecto
+				</h2>
+				<p class="mt-3 text-muted">
+					Plantillas para cuando puedas publicar casos reales o versiones anonimizadas.
+				</p>
+				<ul class="mt-12 grid gap-6 lg:grid-cols-3">
+					<li class="flex flex-col border border-mist bg-paper/30 p-6 lg:translate-y-0">
+						<p class="font-mono text-[11px] font-semibold uppercase tracking-widest text-accent">
+							Operaciones
+						</p>
+						<h3 class="mt-2 font-display text-lg font-semibold text-ink">Unificación de pedidos</h3>
+						<p class="mt-3 flex-1 text-sm leading-relaxed text-muted">
+							<strong class="text-ink">Situación:</strong> varias fuentes y duplicidad en ERP.
+							<br />
+							<strong class="text-ink">Qué hicimos:</strong> capa de integración y panel de excepciones.
+							<br />
+							<strong class="text-ink">Resultado:</strong> menos incidencias y tramitación más rápida.
+						</p>
+					</li>
+					<li class="flex flex-col border border-mist bg-surface p-6 shadow-sm lg:-translate-y-4">
+						<p class="font-mono text-[11px] font-semibold uppercase tracking-widest text-sage">
+							Dirección
+						</p>
+						<h3 class="mt-2 font-display text-lg font-semibold text-ink">Cuadro de mando</h3>
+						<p class="mt-3 flex-1 text-sm leading-relaxed text-muted">
+							<strong class="text-ink">Situación:</strong> informes dispersos y datos con retraso.
+							<br />
+							<strong class="text-ink">Qué hicimos:</strong> pipeline de datos y vistas por rol.
+							<br />
+							<strong class="text-ink">Resultado:</strong> reuniones con cifras alineadas.
+						</p>
+					</li>
+					<li class="flex flex-col border border-mist bg-paper/30 p-6 lg:translate-y-2">
+						<p class="font-mono text-[11px] font-semibold uppercase tracking-widest text-ink/70">
+							Marca
+						</p>
+						<h3 class="mt-2 font-display text-lg font-semibold text-ink">Web y captación B2B</h3>
+						<p class="mt-3 flex-1 text-sm leading-relaxed text-muted">
+							<strong class="text-ink">Situación:</strong> mensaje confuso y poca conversión.
+							<br />
+							<strong class="text-ink">Qué hicimos:</strong> arquitectura de contenidos y despliegue ágil.
+							<br />
+							<strong class="text-ink">Resultado:</strong> propuesta clara y leads cualificados.
+						</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Por qué Resdat -->
+		<section class="bg-paper py-16 sm:py-20">
+			<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+				<div class="grid gap-10 lg:grid-cols-2 lg:gap-16">
+					<div>
+						<p class="font-mono text-xs font-medium uppercase tracking-widest text-muted">
+							05 · Por qué Resdat
+						</p>
+						<h2 class="mt-3 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+							Trato directo, entregables tuyos
+						</h2>
+						<p class="mt-4 text-muted">
+							Sin capas de comercial innecesarias: hablas con quien diseña y construye.
+						</p>
+					</div>
+					<ul class="grid gap-3 sm:grid-cols-2">
+						{
+							[
+								'Lenguaje de negocio, no solo técnico.',
+								'Código y documentación que puedes auditar.',
+								'Confidencialidad y NDA bajo petición.',
+								'Soporte y evolución tras el lanzamiento.',
+							].map((text) => (
+								<li class="flex gap-3 border border-mist bg-surface p-4 text-sm text-ink">
+									<span class="font-display font-bold text-accent" aria-hidden="true">
+										+
+									</span>
+									<span>{text}</span>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Inversión -->
+		<section class="border-y border-mist bg-surface py-16 sm:py-20">
+			<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+				<p class="font-mono text-xs font-medium uppercase tracking-widest text-muted">
+					06 · Inversión
+				</p>
+				<h2 class="mt-3 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+					Orientación de presupuesto
+				</h2>
+				<p class="mt-3 max-w-2xl text-muted">
+					Tras el diagnóstico recibes propuesta cerrada o por fases. Los rangos son referencia —
+					ajusta a tu mercado.
+				</p>
+				<div class="mt-12 grid gap-6 lg:grid-cols-3">
+					<div class="border border-mist bg-paper/40 p-6">
+						<h3 class="font-display font-semibold text-ink">Diagnóstico</h3>
+						<p class="mt-3 font-display text-2xl font-semibold text-ink">Desde X €</p>
+						<p class="mt-2 text-sm text-muted">Sesiones + documento de priorización.</p>
+					</div>
+					<div class="relative overflow-hidden border-2 border-accent bg-accent-soft/40 p-6">
+						<div
+							class="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rotate-12 bg-accent/20"
+							aria-hidden="true"
+						/>
+						<h3 class="relative font-display font-semibold text-ink">Proyecto medio</h3>
+						<p class="relative mt-3 font-display text-2xl font-semibold text-ink">X € – Y €</p>
+						<p class="relative mt-2 text-sm text-muted">Integración o producto con varios hitos.</p>
+					</div>
+					<div class="border border-mist bg-paper/40 p-6">
+						<h3 class="font-display font-semibold text-ink">Retainer</h3>
+						<p class="mt-3 font-display text-2xl font-semibold text-ink">Desde X € / mes</p>
+						<p class="mt-2 text-sm text-muted">Mejoras, soporte y evolución.</p>
+					</div>
+				</div>
+				<p class="mt-8 text-sm text-muted">
+					Sustituye X e Y por tus cifras reales o elimina cifras y ofrece solo presupuesto tras
+					diagnóstico.
+				</p>
+			</div>
+		</section>
+
+		<!-- FAQ -->
+		<section id="faq" class="scroll-mt-24 bg-paper py-16 sm:py-20">
+			<div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+				<p class="font-mono text-xs font-medium uppercase tracking-widest text-muted">07 · FAQ</p>
+				<h2 class="mt-3 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+					Preguntas frecuentes
+				</h2>
+				<div class="mt-10 space-y-2">
+					{
+						[
+							{
+								q: '¿Cuánto suele durar un proyecto?',
+								a: 'Depende del alcance. Un diagnóstico puede ser días; un desarrollo completo, semanas o meses. Cerramos por fases para que veas valor pronto.',
+							},
+							{
+								q: '¿Quién es propietario del código?',
+								a: 'En acuerdos habituales, el cliente es titular del entregable desarrollado y pagado según contrato. Se firma antes de iniciar.',
+							},
+							{
+								q: '¿Trabajáis remoto o presencial?',
+								a: 'Lo habitual es remoto con videollamada; visitas puntuales si el proyecto lo requiere.',
+							},
+							{
+								q: '¿Ofrecéis mantenimiento?',
+								a: 'Sí: soporte, seguridad al día y bolsa de horas para mejoras.',
+							},
+						].map((item) => (
+							<details class="group border border-mist bg-surface open:shadow-md">
+								<summary class="cursor-pointer list-none px-4 py-4 font-medium text-ink marker:content-none [&::-webkit-details-marker]:hidden">
+									<span class="flex items-center justify-between gap-4">
+										{item.q}
+										<span
+											class="font-mono text-lg text-accent transition-transform group-open:rotate-45"
+											aria-hidden="true"
+										>
+											+
+										</span>
+									</span>
+								</summary>
+								<p class="border-t border-mist px-4 pb-4 pt-3 text-sm leading-relaxed text-muted">
+									{item.a}
+								</p>
+							</details>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<!-- Contacto -->
+		<section id="contacto" class="scroll-mt-24 bg-surface py-16 sm:py-20">
+			<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+				<div class="grid gap-12 lg:grid-cols-2 lg:gap-20">
+					<div>
+						<p class="font-mono text-xs font-medium uppercase tracking-widest text-muted">
+							08 · Contacto
+						</p>
+						<h2 class="mt-3 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+							¿Reto digital en marcha?
+						</h2>
+						<p class="mt-4 text-muted">
+							Cuéntanos en unas líneas. Te respondemos con siguientes pasos o una propuesta de
+							diagnóstico.
+						</p>
+						<div class="mt-8 space-y-3 border-l-2 border-accent pl-5 text-sm text-muted">
+							<p>
+								<span class="font-medium text-ink">Email:</span>{' '}
+								<a
+									href="mailto:cesarks81@gmail.com"
+									class="text-accent underline decoration-accent/30 underline-offset-2 hover:decoration-accent"
+								>
+									cesarks81@gmail.com
+								</a>
+							</p>
+							<p>
+								<span class="font-medium text-ink">Tel. / WhatsApp:</span>{' '}
+								<a
+									href="https://wa.me/34689932175"
+									class="text-accent underline decoration-accent/30 underline-offset-2 hover:decoration-accent"
+								>
+									+34 689 932 175
+								</a>
+							</p>
+							<p>
+								<span class="font-medium text-ink">Ubicación:</span> León, España · remoto en
+								todo el país
+							</p>
+						</div>
+					</div>
+					<div class="border border-mist bg-paper/50 p-6 sm:p-8">
+						<form action={CONTACT_FORM_ACTION} method="POST" class="space-y-5">
+							<input type="hidden" name="_subject" value="Contacto web resdat.es" />
+							<div>
+								<label for="nombre" class="block text-sm font-medium text-ink">Nombre</label>
+								<input
+									id="nombre"
+									name="nombre"
+									type="text"
+									required
+									autocomplete="name"
+									class="mt-1.5 w-full rounded-sm border border-mist bg-surface px-3 py-2.5 text-sm text-ink outline-none transition-shadow focus:border-accent focus:ring-2 focus:ring-accent/20"
+								/>
+							</div>
+							<div>
+								<label for="empresa" class="block text-sm font-medium text-ink">Empresa</label>
+								<input
+									id="empresa"
+									name="empresa"
+									type="text"
+									required
+									autocomplete="organization"
+									class="mt-1.5 w-full rounded-sm border border-mist bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
+								/>
+							</div>
+							<div>
+								<label for="email" class="block text-sm font-medium text-ink">Email</label>
+								<input
+									id="email"
+									name="email"
+									type="email"
+									required
+									autocomplete="email"
+									class="mt-1.5 w-full rounded-sm border border-mist bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
+								/>
+							</div>
+							<div>
+								<label for="telefono" class="block text-sm font-medium text-ink"
+									>Teléfono <span class="font-normal text-muted">(opcional)</span></label
+								>
+								<input
+									id="telefono"
+									name="telefono"
+									type="tel"
+									autocomplete="tel"
+									class="mt-1.5 w-full rounded-sm border border-mist bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
+								/>
+							</div>
+							<div>
+								<label for="mensaje" class="block text-sm font-medium text-ink"
+									>¿Qué necesitáis?</label
+								>
+								<textarea
+									id="mensaje"
+									name="mensaje"
+									rows="4"
+									required
+									class="mt-1.5 w-full resize-y rounded-sm border border-mist bg-surface px-3 py-2.5 text-sm text-ink outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
+								></textarea>
+							</div>
+							<button
+								type="submit"
+								class="w-full rounded-sm bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover sm:w-auto"
+							>
+								Enviar solicitud
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="border-t border-mist bg-ink py-12 text-paper">
+		<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+			<div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+				<div>
+					<p class="font-display text-lg font-extrabold tracking-wide text-paper">RESDAT</p>
+					<p class="mt-2 max-w-xs text-sm text-paper/60">
+						Soluciones digitales que impulsan tu empresa.
+					</p>
+				</div>
+				<div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-paper/70">
+					<a href="#" class="transition-colors hover:text-paper">Aviso legal</a>
+					<a href="#" class="transition-colors hover:text-paper">Privacidad</a>
+					<a
+						href="https://www.resdat.es/"
+						class="transition-colors hover:text-paper"
+					>
+						resdat.es
+					</a>
+				</div>
+			</div>
+			<p class="mt-10 border-t border-paper/10 pt-8 text-xs text-paper/45">
+				© {new Date().getFullYear()} RESDAT. Todos los derechos reservados.
+			</p>
+		</div>
+	</footer>
+</Layout>
+
+<style>
+	.skip-link {
+		position: absolute;
+		left: 1rem;
+		top: 1rem;
+		z-index: 50;
+		padding: 0.5rem 1rem;
+		border-radius: 2px;
+		background: var(--color-surface);
+		box-shadow:
+			0 1px 3px 0 rgb(0 0 0 / 0.12),
+			0 1px 2px -1px rgb(0 0 0 / 0.1);
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--color-ink);
+		transform: translateY(-130%);
+		transition: transform 0.15s ease;
+	}
+	.skip-link:focus {
+		transform: translateY(0);
+		outline: 2px solid var(--color-accent);
+		outline-offset: 2px;
+	}
+</style>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+	<defs>
+		<linearGradient id="f-bar" x1="0%" y1="0%" x2="100%" y2="0%">
+			<stop stop-color="#00A9CE" />
+			<stop offset="0.55" stop-color="#0096C7" />
+			<stop offset="1" stop-color="#1E5AA8" />
+		</linearGradient>
+	</defs>
+	<path
+		stroke="#001A40"
+		stroke-width="2"
+		stroke-linejoin="round"
+		d="M24 4 40 13.2v21.6L24 44 8 34.8V13.2L24 4Z"
+	/>
+	<circle cx="24" cy="4" r="2.25" fill="#00A9CE" />
+	<circle cx="40" cy="34.8" r="2.25" fill="#00A9CE" />
+	<circle cx="8" cy="34.8" r="2.25" fill="#00A9CE" />
+	<rect x="14" y="17" width="20" height="3.2" rx="0.8" fill="url(#f-bar)" />
+	<rect x="14" y="22.4" width="14" height="3.2" rx="0.8" fill="url(#f-bar)" />
+	<rect x="14" y="27.8" width="17" height="3.2" rx="0.8" fill="url(#f-bar)" />
+</svg>

@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment & secrets (never commit)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE / editor (optional: remove .vscode if you want to share settings)
+.idea/
+*.swp
+*.swo
+*~
+
+# Astro / Vite cache
+.astro/
+
+# Testing / coverage
+coverage/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional: local Netlify / Vercel (uncomment if you use them)
+# .netlify/
+# .vercel/

@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+import faviconIco from '../assets/favicon.ico?url';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const canonical = 'https://www.resdat.es/';
+
+const {
+	title = 'Resdat — Soluciones digitales para empresas',
+	description =
+		'Consultoría, desarrollo a medida, integraciones y automatización. Soluciones digitales que impulsan tu empresa, desde León para toda España.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="canonical" href={canonical} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" href={faviconIco} sizes="any" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#001a40" />
+		<title>{title}</title>
+	</head>
+	<body class="min-h-screen bg-paper font-sans text-ink antialiased">
+		<slot />
+	</body>
+</html>

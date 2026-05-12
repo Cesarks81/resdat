@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+	/* Marca Resdat: navy #001A40, cian #00A9CE, azul medio gradiente */
+	--color-navy: #001a40;
+	--color-ink: #001a40;
+	--color-paper: #f4f7fb;
+	--color-surface: #ffffff;
+	--color-mist: #d3dde8;
+	--color-muted: #4a5f73;
+	--color-accent: #00a9ce;
+	--color-accent-hover: #008eb3;
+	--color-accent-soft: #d6f0f7;
+	--color-sage: #1e5aa8;
+
+	--font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+	--font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+	body {
+		font-family: var(--font-sans);
+	}
+	h1,
+	h2,
+	h3,
+	.font-display {
+		font-family: var(--font-display);
+	}
+}
