@@ -14,6 +14,8 @@
 
 </div>
 
+![RESDAT preview](./public/preview.png)
+
 ---
 
 ## Table of Contents
